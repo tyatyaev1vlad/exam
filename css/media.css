@@ -1,0 +1,47 @@
+@media (max-width:800px)
+{
+    .top-nav{
+        display: flex !important;
+    }
+    header{
+        display: none;
+    }
+    .line{
+        flex-direction: column-reverse;
+        border: 3px white solid;
+        border-radius: 10px;
+    }
+    .line ~.line{
+        flex-direction: column;
+    }
+    footer{
+        flex-direction: column;
+    }
+    .icons{
+        width: 100vw;
+        margin-bottom: 10px;
+    }
+    .logo{
+        background: url("../img/2.jpeg");
+        background-size: cover;
+        border-radius: 10px;
+        height: 45px;
+        width: auto;
+        aspect-ratio: 2/1;
+    }
+    .text1,.text2{
+        margin-top: 10px;
+    }
+    .head{
+        letter-spacing: 1rem;
+    }
+    .footer-nav-item{
+        font-size: calc(0.5em + 1vw);
+    }
+    .carousel-container {
+        max-width: 100%;
+    }
+    .carousel-slide {
+        height: 200px;
+    }
+}

@@ -1,0 +1,244 @@
+
+body{
+    min-height: 100vh;
+    background: #f9f9f9;  
+    color: #222;  
+}
+@font-face {
+    font-family: 'Courier';
+    src: url('../font/Courier\ WGL4\ Regular.otf');
+}
+@font-face {
+    font-family: 'Palui';
+    src: url('../font/PaluiSPDemo-Bold.otf');
+}
+.main-container{
+    display: flex;
+    flex-direction: column;
+    flex:1;
+}
+
+header{
+    display: flex;
+    justify-content: space-around;
+}
+
+/*.logo{
+    background: url("../img/1.jpg");
+    background-size: cover;
+    border-radius: 10px;
+    height: auto;
+    width: 20%;
+    aspect-ratio: 2/1;
+    box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5), 1px 1px 5px rgba(255, 255, 255, 1);
+}
+*/
+.nav{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    font-size: calc(0.5em + 1vw);
+    color: #333; /* чуть темнее для меню */
+    flex-grow: 1;
+}
+
+.nav-item{
+    box-sizing: border-box;
+    padding: 10px;
+    cursor: pointer;
+    font-family: 'Courier';
+    margin-left: 50px;
+}
+
+.nav-item:hover{
+    text-shadow: 2px 2px 5px #FF3300; /* делаем помягче подсветку */
+}
+.bg-line{
+    background: url("../img/logo.jpg") no-repeat transparent;
+    background-size: cover;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 6/1;
+    margin: 25px 0;
+}
+
+.head{
+    font-family: 'Palui';
+    text-align: center;
+    font-size: calc(1.5rem + 5vw);
+    letter-spacing: 2rem;
+    color: #222;
+    text-shadow: none;
+}
+
+.line{
+    display: flex;
+    margin: 25px auto;
+    width: 80vw;
+}
+
+.img1{
+    object-fit: scale-down;
+    flex: 1 1 50%;
+}
+
+.text1{
+    color: #333;
+    font-family: 'Courier';
+    font-size: calc(0.5rem + 1vw);
+    margin: 0px 10px 10px 20px;
+    flex: 1 1 50%;
+}
+
+.img2{
+    object-fit: scale-down;
+    flex:1 1 50%;
+}
+
+.img2 img, .img1 img{
+    width: 100%;
+    height: auto;
+}
+
+.text2{
+    color: #333;
+    font-size: calc(0.5rem + 1vw);
+    font-family: 'Courier';
+    margin: 0px 10px 10px 20px;
+    flex:1 1 50%;
+}
+.icons{
+    display: flex;
+    width: 30vw;
+    justify-content: space-around;
+    align-items: center;
+}
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 30px 10vw;
+}
+.card {
+    background: white;
+    color: #222;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    width: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+.card:hover {
+    transform: scale(1.03);
+}
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+.card-content {
+    padding: 15px;
+}
+.card h3 {
+    margin-top: 0;
+    font-family: 'Palui';
+}
+.card p {
+    font-family: 'Courier';
+    font-size: 14px;
+}
+.carousel-container {
+    position: relative;
+    max-width: 1150px;
+    margin: 0 auto 20px auto;
+    overflow: hidden;
+}
+.carousel-slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+.carousel-slide {
+    min-width: 100%;
+    height: 400px;
+}
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+}
+.carousel-button.prev {
+    left: 10px;
+}
+.carousel-button.next {
+    right: 10px;
+}
+.carousel-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+footer {
+    background-color: rgb(213, 213, 213);
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+footer p {
+    font-size: 12px;
+    color: #000000;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.modal-content form input[type="text"],
+.modal-content form input[type="email"],
+.modal-content form textarea {
+  width: 100%;
+  box-sizing: border-box; /* чтобы padding и border учитывались в ширине */
+  padding: 8px; /* немного внутреннего отступа для удобства */
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
