@@ -34,6 +34,7 @@
     }
     .head{
         letter-spacing: 0.3rem;
+        font-size: clamp(1.5rem, 6vw, 2.5rem);
     }
     .footer-nav-item{
         font-size: calc(0.5em + 1vw);
